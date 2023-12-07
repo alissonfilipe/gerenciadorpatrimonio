@@ -1,7 +1,24 @@
 import 'package:flutter/material.dart';
 
 void main() {
+
   runApp(const MyApp());
+
+}
+
+
+
+class MeuNovoWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(16.0),
+      child: Text(
+        'Olá, eu sou um widget!',
+        style: TextStyle(fontSize: 20.0),
+      ),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -11,7 +28,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Gerenciador de Patrimônio',
       theme: ThemeData(
         // This is the theme of your application.
         //teste 3
@@ -31,7 +48,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Gerenciador de Patrimônio'),
     );
   }
 }
@@ -56,6 +73,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+
 
   void _incrementCounter() {
     setState(() {
@@ -111,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            ), MeuNovoWidget(), // Adicione o novo widget aqui
           ],
         ),
       ),
